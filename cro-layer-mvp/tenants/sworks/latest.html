@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>S-Works — CRO Hero (Testimonials)</title>
+<title>S-Works — CRO Hero (Aligned Testimonials)</title>
 <style>
 /* ===== Namespace & tokens ===== */
-#cro-layer, #cro-layer * { box-sizing: border-box; }
+#cro-layer, #cro-layer * { box-sizing:border-box; }
 #cro-layer{
   --ink:#0b1220; --muted:#475569; --bg:#ffffff;
   --accent:#ef4444; --accent-hover:#dc2626; --accent-ink:#ffffff;
@@ -16,13 +16,16 @@
 }
 
 /* Layout */
-#cro-layer .wrap{max-width:1200px;margin:0 auto;padding:64px 20px 80px;}
+#cro-layer .wrap{max-width:1200px;margin:0 auto;padding:64px 20px 88px;}
 #cro-layer .grid{display:grid;gap:28px;}
 @media (min-width:980px){
-  #cro-layer .grid{grid-template-columns:1.15fr .85fr;gap:44px;align-items:start;}
+  #cro-layer .grid{
+    grid-template-columns:1.15fr .85fr;
+    gap:44px; align-items:start;
+  }
 }
 
-/* Left column */
+/* Left */
 #cro-layer h1{margin:0 0 16px;font-weight:900;letter-spacing:-.02em;line-height:1.02;font-size:clamp(36px,6vw,64px);}
 #cro-layer .sub{margin:0 0 24px;color:var(--muted);font-size:clamp(16px,2.2vw,20px);max-width:70ch;}
 #cro-layer .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:6px 0 10px;}
@@ -38,7 +41,7 @@
 #cro-layer .tick:before{content:"";width:11px;height:7px;border-left:3px solid #22c55e;border-bottom:3px solid #22c55e;transform:rotate(-45deg) translateY(-1px)}
 #cro-layer .btxt{font-size:16px}
 
-/* Right column wrapper (soft background like a card area) */
+/* Right wrapper: sits a bit lower on desktop to match mock composition */
 #cro-layer .right-wrap{
   border-radius:22px; border:1px solid var(--border); overflow:hidden;
   background:
@@ -48,17 +51,19 @@
   box-shadow:var(--shadow);
   padding:18px;
 }
+@media (min-width:980px){ #cro-layer .right-wrap{ margin-top:14px; } }
 
-/* Testimonials stack */
-#cro-layer .t-stack{display:grid;gap:14px}
+/* Testimonials */
+#cro-layer .t-stack{display:grid;gap:16px}
 #cro-layer .t-card{
-  background:#fff;border:1px solid var(--border);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow)
+  background:#fff;border:1px solid var(--border);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow);
+  min-height:94px; display:flex; align-items:center;
 }
 #cro-layer .t-row{display:flex;gap:12px;align-items:center}
-#cro-layer .avatar-wrap{
-  position:relative; width:56px; height:56px; border-radius:50%;
-  background:conic-gradient(from 180deg, rgba(239,68,68,.35), rgba(239,68,68,.0) 60%);
-  display:grid; place-items:center;
+#cro-layer .avatar-ring{
+  width:56px;height:56px;border-radius:50%;
+  background:conic-gradient(from 200deg, rgba(239,68,68,.55), rgba(239,68,68,.0) 65%);
+  display:grid;place-items:center; flex:0 0 56px;
 }
 #cro-layer .avatar{
   width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #fff; box-shadow:0 0 0 1px #dbeafe;
@@ -88,12 +93,12 @@
         </div>
       </div>
 
-      <!-- RIGHT: soft panel + three testimonial tiles with generated avatars -->
+      <!-- RIGHT -->
       <aside class="right-wrap">
         <div class="t-stack">
           <article class="t-card">
             <div class="t-row">
-              <span class="avatar-wrap"><img class="avatar" src="https://i.pravatar.cc/256?img=47" alt="Jennifer R." /></span>
+              <span class="avatar-ring"><img class="avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jennifer R." /></span>
               <div>
                 <p class="quote">“Incredible service and expertise.”</p>
                 <p class="name">Jennifer R.</p>
@@ -102,7 +107,7 @@
           </article>
           <article class="t-card">
             <div class="t-row">
-              <span class="avatar-wrap"><img class="avatar" src="https://i.pravatar.cc/256?img=15" alt="Mike T." /></span>
+              <span class="avatar-ring"><img class="avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mike T." /></span>
               <div>
                 <p class="quote">“A seamless process from start to finish.”</p>
                 <p class="name">Mike T.</p>
@@ -111,7 +116,7 @@
           </article>
           <article class="t-card">
             <div class="t-row">
-              <span class="avatar-wrap"><img class="avatar" src="https://i.pravatar.cc/256?img=68" alt="Sarah M." /></span>
+              <span class="avatar-ring"><img class="avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah M." /></span>
               <div>
                 <p class="quote">“I highly recommend S-Works.”</p>
                 <p class="name">Sarah M.</p>
