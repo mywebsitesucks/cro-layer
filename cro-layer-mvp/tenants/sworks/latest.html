@@ -1,129 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>S-Works — Hero (namespaced)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>S-Works — Mockup-Exact Hero</title>
 <style>
-  /* ===== CRO-LAYER NAMESPACE ===== */
-  #cro-layer, #cro-layer * { box-sizing: border-box; }
-  #cro-layer { background:#fff; color:#0b1220; font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial; }
+  /* ===== NAMESPACE ===== */
+  #cro-layer, #cro-layer *{ box-sizing:border-box }
+  #cro-layer{ background:#fff; color:#0b1220; font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial }
 
-  #cro-layer .hero{ padding:56px 20px 80px; border-bottom:1px solid #e5e7eb; }
-  #cro-layer .container{ max-width:1200px; margin:0 auto; display:grid; gap:32px; }
-  #cro-layer .left{ }
-  #cro-layer .right{ position:relative; }
+  /* Container */
+  #cro-layer .wrap{ max-width:1200px; margin:0 auto; padding:56px 20px 72px }
 
-  /* Headline & copy */
+  /* HERO */
   #cro-layer h1{
-    margin:0 0 16px!important;
-    font-weight:900!important; line-height:1.05!important; letter-spacing:-.02em!important;
-    font-size:clamp(36px,6vw,64px)!important;
+    margin:0 0 16px; font-weight:900; line-height:1.02; letter-spacing:-.02em;
+    font-size: clamp(36px,6vw,64px);
   }
-  #cro-layer .subhead{ margin:0 0 24px!important; color:#475569!important; font-size:clamp(16px,2.3vw,20px)!important; max-width:62ch; }
-
-  /* CTAs */
-  #cro-layer .cta-row{ display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin:4px 0 10px; }
-  #cro-layer .btn{ display:inline-block; text-decoration:none!important; font-weight:800; padding:16px 22px; border-radius:16px; }
-  #cro-layer .btn.primary{ background:#ef4444; color:#fff!important; box-shadow:0 10px 20px rgba(11,18,32,.10), 0 1px 4px rgba(11,18,32,.06); }
-  #cro-layer .btn.primary:hover{ background:#dc2626; transform:translateY(-1px); transition:all .15s ease; }
-  #cro-layer .btn.secondary{ background:#fff; color:#0b1220!important; border:1px solid #e5e7eb; }
-
-  #cro-layer .proof{ margin-top:12px; color:#64748b!important; font-size:14px!important; }
-
-  /* Benefits */
-  #cro-layer .benefits{ margin-top:24px; display:grid; gap:12px; }
-  #cro-layer .benefit{ display:grid; grid-template-columns:26px 1fr; gap:10px; align-items:flex-start; }
-  #cro-layer .check{
-    width:26px;height:26px;border-radius:50%; background:rgba(34,197,94,.10); border:1px solid rgba(34,197,94,.25);
-    display:flex;align-items:center;justify-content:center; margin-top:2px;
+  #cro-layer .sub{
+    margin:0 0 26px; color:#475569; font-size:clamp(16px,2.3vw,20px); max-width:70ch;
   }
-  #cro-layer .check:before{
-    content:""; width:11px;height:7px; display:block;
-    border-left:3px solid #22c55e; border-bottom:3px solid #22c55e; transform:rotate(-45deg) translateY(-1px);
+  #cro-layer .cta-row{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-bottom:10px }
+  #cro-layer .btn{ text-decoration:none; display:inline-block; font-weight:800; padding:16px 24px; border-radius:14px }
+  #cro-layer .btn.primary{ background:#ef4444; color:#fff; box-shadow:0 10px 20px rgba(11,18,32,.10),0 1px 4px rgba(11,18,32,.06) }
+  #cro-layer .btn.primary:hover{ background:#dc2626; transform:translateY(-1px); transition:all .15s ease }
+  #cro-layer .proof{ margin-top:12px; color:#64748b; font-size:14px }
+
+  /* ROWS: benefit (left) + testimonial (right) */
+  #cro-layer .rows{ margin-top:36px; display:grid; gap:18px }
+  #cro-layer .row{
+    display:grid; gap:18px; align-items:center;
+  }
+  @media (min-width: 900px){
+    #cro-layer .row{ grid-template-columns: 1.1fr 1fr; }
   }
 
-  /* RIGHT panel – explicit height so it can’t collapse under host CSS */
-  #cro-layer .panel{
-    height:320px; /* mobile/default */
-    border:1px solid #e5e7eb; border-radius:24px; overflow:hidden;
-    background:
-      radial-gradient(1200px 480px at 110% -20%, #fde68a 0%, transparent 60%),
-      radial-gradient(1000px 380px at -10% 110%, #93c5fd 0%, transparent 55%),
-      linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
-    box-shadow:0 18px 42px rgba(11,18,32,.12), 0 2px 10px rgba(11,18,32,.06);
+  /* Benefit (left) */
+  #cro-layer .benefit{ display:grid; grid-template-columns:32px 1fr; gap:14px; align-items:flex-start }
+  #cro-layer .tick{
+    width:32px; height:32px; border-radius:50%;
+    background:rgba(34,197,94,.12); border:1px solid rgba(34,197,94,.25);
+    display:flex; align-items:center; justify-content:center; margin-top:2px
   }
-  #cro-layer .badge{
-    position:absolute; top:16px; right:16px; background:#111827; color:#fff; font-weight:800; font-size:12px;
-    letter-spacing:.02em; padding:8px 12px; border-radius:999px; box-shadow:0 10px 20px rgba(11,18,32,.10), 0 1px 4px rgba(11,18,32,.06);
+  #cro-layer .tick:before{
+    content:""; width:12px; height:8px; display:block;
+    border-left:3px solid #22c55e; border-bottom:3px solid #22c55e;
+    transform:rotate(-45deg) translateY(-1px)
   }
-  #cro-layer .badge:before{ content:"★"; color:#fbbf24; margin-right:6px; }
-  #cro-layer .card{
-    position:absolute; left:28px; right:28px; bottom:28px;
-    background:#fff; border:1px solid #e5e7eb; border-radius:18px; padding:16px 18px;
-    box-shadow:0 10px 20px rgba(11,18,32,.10), 0 1px 4px rgba(11,18,32,.06);
+  #cro-layer .b-title{ margin:0; font-weight:800; letter-spacing:-.01em; line-height:1.2; font-size:22px }
+  #cro-layer .b-sub{ margin:6px 0 0; color:#475569 }
+
+  /* Testimonial (right) */
+  #cro-layer .t-card{
+    background:#fff; border:1px solid #e5e7eb; border-radius:18px;
+    padding:16px 18px; box-shadow:0 10px 20px rgba(11,18,32,.10),0 1px 4px rgba(11,18,32,.06)
   }
-  #cro-layer .card-row{ display:flex; gap:14px; align-items:center; }
+  #cro-layer .t-row{ display:flex; gap:14px; align-items:center }
   #cro-layer .avatar{
-    width:56px;height:56px;border-radius:50%;
-    background:linear-gradient(135deg,#c7d2fe,#e0e7ff); border:1px solid #dbeafe; box-shadow:inset 0 2px 6px rgba(11,18,32,.08);
-    flex:0 0 56px;
+    width:56px; height:56px; border-radius:50%; object-fit:cover; flex:0 0 56px;
+    border:1px solid #dbeafe; background:linear-gradient(135deg,#c7d2fe,#e0e7ff)
   }
-  #cro-layer .card h3{ margin:0!important; font-size:16px!important; line-height:1.3!important; letter-spacing:-.01em!important; }
-  #cro-layer .card p{ margin:6px 0 0!important; font-size:14px!important; color:#64748b!important; }
+  #cro-layer .quote{ margin:0; font-size:18px; font-weight:800; line-height:1.25; letter-spacing:-.01em }
+  #cro-layer .name{ margin:6px 0 0; color:#64748b; font-size:14px }
 
-  /* Desktop split */
-  @media (min-width: 960px){
-    #cro-layer .container{ grid-template-columns: 1.1fr .9fr; align-items:center; gap:48px; }
-    #cro-layer .hero{ padding:72px 24px 96px; }
-    #cro-layer .panel{ height:440px; }
-  }
+  /* Divider line (like the mock’s subtle section split) */
+  #cro-layer .divider{ margin-top:40px; height:1px; background:#f1f5f9 }
 </style>
 </head>
 <body>
 <div id="cro-layer">
-  <section class="hero" aria-label="S-Works Hero Section">
-    <div class="container">
-      <div class="left">
-        <h1>Keep More of Your Money with a Proper S-Corp Setup</h1>
-        <p class="subhead">We help solopreneurs, creatives, and small business owners save thousands in taxes — fast, compliant, and stress-free.</p>
+  <div class="wrap">
+    <!-- HERO -->
+    <h1>Keep More of Your Money with a Proper S-Corp Setup</h1>
+    <p class="sub">We help solopreneurs, creatives, and small business owners save thousands in taxes — fast, compliant, and stress-free.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="https://calendly.com/s-works/tax-savings-call" data-cl-cta="book-call">Book Your Free Tax-Savings Call</a>
+      <a class="btn" style="background:#fff;border:1px solid #e5e7eb;color:#0b1220" href="https://www.s-works.io/pricing" data-cl-cta="learn-pricing">Learn about pricing</a>
+    </div>
+    <div class="proof">Trusted by 500+ business owners nationwide</div>
 
-        <div class="cta-row">
-          <a href="https://calendly.com/s-works/tax-savings-call" class="btn primary" data-cl-cta="book-call">Book Your Free Tax-Savings Call</a>
-          <a href="https://www.s-works.io/pricing" class="btn secondary" data-cl-cta="learn-pricing">Learn about pricing</a>
-        </div>
+    <div class="divider"></div>
 
-        <div class="proof">Trusted by 500+ business owners nationwide</div>
-
-        <div class="benefits" role="list" aria-label="Key benefits">
-          <div class="benefit" role="listitem"><span class="check" aria-hidden="true"></span><span>Save up to $10k+ annually in taxes</span></div>
-          <div class="benefit" role="listitem"><span class="check" aria-hidden="true"></span><span>Done-for-you filing &amp; compliance</span></div>
-          <div class="benefit" role="listitem"><span class="check" aria-hidden="true"></span><span>Stress-free setup in as little as 5 days</span></div>
-        </div>
-      </div>
-
-      <div class="right" aria-hidden="true">
-        <div class="panel">
-          <div class="badge">500+ owners</div>
-          <div class="card">
-            <div class="card-row">
-              <div class="avatar"></div>
-              <div>
-                <h3>“A seamless process from start to finish.”</h3>
-                <p>Fast filing, clear steps, zero stress — exactly what small business owners need.</p>
-              </div>
-            </div>
+    <!-- ROW 1 -->
+    <div class="rows">
+      <div class="row">
+        <div class="benefit">
+          <div class="tick"></div>
+          <div>
+            <h3 class="b-title">Save up to $10k+ annually in taxes</h3>
+            <p class="b-sub">We structure your compensation to minimize self-employment taxes without compromising compliance.</p>
           </div>
         </div>
+        <article class="t-card">
+          <div class="t-row">
+            <img class="avatar" src="https://placehold.co/112x112/jennifer.jpg?text=J" alt="Jennifer R." />
+            <div>
+              <p class="quote">“Incredible service and expertise.”</p>
+              <p class="name">Jennifer R.</p>
+            </div>
+          </div>
+        </article>
       </div>
 
+      <!-- ROW 2 -->
+      <div class="row">
+        <div class="benefit">
+          <div class="tick"></div>
+          <div>
+            <h3 class="b-title">Done-for-you filing &amp; compliance</h3>
+            <p class="b-sub">We handle the paperwork and deadlines so you can focus on your business.</p>
+          </div>
+        </div>
+        <article class="t-card">
+          <div class="t-row">
+            <img class="avatar" src="https://placehold.co/112x112/mike.jpg?text=M" alt="Mike T." />
+            <div>
+              <p class="quote">“A seamless process from start to finish.”</p>
+              <p class="name">Mike T.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ROW 3 -->
+      <div class="row">
+        <div class="benefit">
+          <div class="tick"></div>
+          <div>
+            <h3 class="b-title">Stress-free setup in as little as 5 days</h3>
+            <p class="b-sub">Clear steps, proactive communication, and a fast path to savings.</p>
+          </div>
+        </div>
+        <article class="t-card">
+          <div class="t-row">
+            <img class="avatar" src="https://placehold.co/112x112/sarah.jpg?text=S" alt="Sarah M." />
+            <div>
+              <p class="quote">“I highly recommend S-Works.”</p>
+              <p class="name">Sarah M.</p>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
-  </section>
+  </div>
 </div>
 
 <script>
-  // tiny logger (optional)
-  addEventListener('click',(e)=>{ const a=e.target.closest('#cro-layer a[data-cl-cta]'); if(a) console.log('[CRO Layer] CTA:', a.getAttribute('data-cl-cta'), a.href); });
+  // tiny optional logger
+  addEventListener('click',(e)=>{const a=e.target.closest('#cro-layer a[data-cl-cta]'); if(a) console.log('[CRO Layer] CTA:', a.getAttribute('data-cl-cta'), a.href);});
 </script>
 </body>
 </html>
