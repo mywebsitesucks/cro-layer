@@ -1,0 +1,20 @@
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 Arial,sans-serif;color:#111}
+.hero{background:linear-gradient(135deg,#0a67d7,#18b6f6);color:#fff;padding:24px 0 56px}
+.nav{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 20px}
+.brand{font-weight:700}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,.35)}
+.btn.primary{background:#f3922b;border-color:#f3922b;color:#fff}
+.btn.ghost{color:#fff}
+.hero-inner{text-align:center;margin-top:32px;padding:0 20px}
+.hero-inner h1{font-size:40px;margin:0 0 8px}
+.hero-inner p{opacity:.95;margin:0 0 16px}
+.note{opacity:.85;margin-top:8px}
+.trust{background:#fff;padding:18px 0}
+.trust-row{display:flex;gap:24px;justify-content:center;opacity:.8}
+.benefits{background:#fbfbfc;padding:32px 0}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1100px;margin:0 auto;padding:0 20px}
+.grid article{background:#fff;border:1px solid #eee;border-radius:12px;padding:16px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.cta{text-align:center;padding:40px 20px}
+.btn.wide{min-width:220px}
+.footer{text-align:center;padding:24px;color:#666;background:#fff;border-top:1px solid #eee}
+@media (max-width:900px){.grid{grid-template-columns:1fr} .hero-inner h1{font-size:32px}}
