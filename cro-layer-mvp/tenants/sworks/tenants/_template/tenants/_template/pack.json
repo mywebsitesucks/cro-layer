@@ -1,0 +1,21 @@
+{
+  "tenant_slug": "<slug>",
+  "layout": "proof-led",
+  "tokens": {
+    "font": "system",
+    "colors": { "ink": "#0b1220", "accent": "#ef4444", "bg": "#ffffff" }
+  },
+  "hero": {
+    "headline": "",
+    "subhead": "",
+    "primary_cta": { "text": "", "href": "" },
+    "secondary_cta": { "text": "", "href": "" },
+    "proof_line": "",
+    "bullets": ["", "", ""]
+  },
+  "assets": {
+    "logo_url": null,
+    "trust_logos": [],
+    "testimonials": []
+  }
+}
