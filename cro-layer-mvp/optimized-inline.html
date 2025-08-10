@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Optimized Landing — CRO Layer</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;font:16px/1.5 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Arial,sans-serif;color:#111}
+    .hero{background:linear-gradient(135deg,#0a67d7,#18b6f6);color:#fff;padding:24px 0 56px}
+    .nav{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 20px}
+    .brand{font-weight:700}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,.35)}
+    .btn.primary{background:#f3922b;border-color:#f3922b;color:#fff}
+    .btn.ghost{color:#fff}
+    .hero-inner{text-align:center;margin-top:32px;padding:0 20px}
+    .hero-inner h1{font-size:40px;margin:0 0 8px}
+    .hero-inner p{opacity:.95;margin:0 0 16px}
+    .note{opacity:.85;margin-top:8px}
+    .trust{background:#fff;padding:18px 0}
+    .trust-row{display:flex;gap:24px;justify-content:center;opacity:.8}
+    .benefits{background:#fbfbfc;padding:32px 0}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1100px;margin:0 auto;padding:0 20px}
+    .grid article{background:#fff;border:1px solid #eee;border-radius:12px;padding:16px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+    .cta{text-align:center;padding:40px 20px}
+    .btn.wide{min-width:220px}
+    .footer{text-align:center;padding:24px;color:#666;background:#fff;border-top:1px solid #eee}
+    @media (max-width:900px){.grid{grid-template-columns:1fr} .hero-inner h1{font-size:32px}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <div class="brand">Your Brand</div>
+      <a class="btn ghost" href="#signup">Get Started</a>
+    </nav>
+    <div class="hero-inner">
+      <h1>Turn more visitors into customers</h1>
+      <p>Clarity, proof, and irresistible calls-to-action—done for you.</p>
+      <a class="btn primary" href="#signup">Start Free Trial</a>
+      <div class="note">No credit card required.</div>
+    </div>
+  </header>
+
+  <section class="trust">
+    <div class="trust-row">
+      <div>Secure</div><div>Trusted by teams</div><div>Proven results</div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="grid">
+      <article><h3>Make it obvious</h3><p>Clear headline + subhead so visitors get it in 3 seconds.</p></article>
+      <article><h3>Build trust fast</h3><p>Add social proof and remove doubts with concise proof lines.</p></article>
+      <article><h3>Guide the click</h3><p>Primary CTA above the fold and repeated at the bottom.</p></article>
+    </div>
+  </section>
+
+  <section id="signup" class="cta">
+    <h2>Ready to grow?</h2>
+    <a class="btn primary wide" href="#signup">Book a Demo</a>
+  </section>
+
+  <footer class="footer">© 2025 Your Brand</footer>
+</body>
+</html>
