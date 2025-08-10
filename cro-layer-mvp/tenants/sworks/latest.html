@@ -1,136 +1,207 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>S-Works — CRO Hero (Aligned Testimonials)</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>S-Works — Proof-Led Hero</title>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-/* ===== Namespace & tokens ===== */
-#cro-layer, #cro-layer * { box-sizing:border-box; }
-#cro-layer{
-  --ink:#0b1220; --muted:#475569; --bg:#ffffff;
-  --accent:#ef4444; --accent-hover:#dc2626; --accent-ink:#ffffff;
-  --radius:16px; --border:#e5e7eb;
-  --shadow:0 14px 28px rgba(11,18,32,.10), 0 1px 4px rgba(11,18,32,.06);
-  color:var(--ink); background:var(--bg);
-  font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial;
-}
-
-/* Layout */
-#cro-layer .wrap{max-width:1200px;margin:0 auto;padding:64px 20px 88px;}
-#cro-layer .grid{display:grid;gap:28px;}
-@media (min-width:980px){
-  #cro-layer .grid{
-    grid-template-columns:1.15fr .85fr;
-    gap:44px; align-items:start;
+  :root{
+    --ink:#0b1220;
+    --muted:#475569;
+    --bg:#ffffff;
+    --accent:#ef4444;
+    --accent-hover:#dc2626;
+    --border:#e5e7eb;
+    --shadow:0 12px 24px rgba(15,23,42,.08), 0 3px 10px rgba(15,23,42,.06);
   }
-}
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    color:var(--ink);
+    background:var(--bg);
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
 
-/* Left */
-#cro-layer h1{margin:0 0 16px;font-weight:900;letter-spacing:-.02em;line-height:1.02;font-size:clamp(36px,6vw,64px);}
-#cro-layer .sub{margin:0 0 24px;color:var(--muted);font-size:clamp(16px,2.2vw,20px);max-width:70ch;}
-#cro-layer .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:6px 0 10px;}
-#cro-layer .btn{display:inline-block;font-weight:800;text-decoration:none;border-radius:14px;padding:16px 22px;}
-#cro-layer .btn.primary{background:var(--accent);color:var(--accent-ink);box-shadow:var(--shadow);}
-#cro-layer .btn.primary:hover{background:var(--accent-hover);transform:translateY(-1px);transition:all .15s ease;}
-#cro-layer .btn.secondary{background:#fff;border:1px solid var(--border);color:var(--ink);}
-#cro-layer .proof{margin-top:12px;color:#64748b;font-size:14px}
-#cro-layer .divider{margin:18px 0;height:1px;background:#f1f5f9}
-#cro-layer .benefits{display:grid;gap:12px}
-#cro-layer .benefit{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:flex-start}
-#cro-layer .tick{width:26px;height:26px;border-radius:50%;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);display:flex;align-items:center;justify-content:center;margin-top:2px}
-#cro-layer .tick:before{content:"";width:11px;height:7px;border-left:3px solid #22c55e;border-bottom:3px solid #22c55e;transform:rotate(-45deg) translateY(-1px)}
-#cro-layer .btxt{font-size:16px}
+  .section{
+    padding:28px 20px 48px;
+    border-bottom:1px solid var(--border);
+  }
+  .container{
+    max-width:1200px;
+    margin:0 auto;
+    display:grid;
+    gap:28px;
+  }
 
-/* Right wrapper: sits a bit lower on desktop to match mock composition */
-#cro-layer .right-wrap{
-  border-radius:22px; border:1px solid var(--border); overflow:hidden;
-  background:
-    radial-gradient(700px 220px at 120% -10%, #fde68a 0%, transparent 60%),
-    radial-gradient(700px 220px at -10% 120%, #93c5fd 0%, transparent 55%),
-    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-  box-shadow:var(--shadow);
-  padding:18px;
-}
-@media (min-width:980px){ #cro-layer .right-wrap{ margin-top:14px; } }
+  h1{
+    margin:0 0 14px 0;
+    font-weight:800;
+    line-height:1.08;
+    letter-spacing:-0.02em;
+    font-size: clamp(28px, 6vw, 54px);
+    max-width: 20ch;
+  }
+  .subhead{
+    margin:0 0 22px 0;
+    color:var(--muted);
+    font-size: clamp(16px, 3.6vw, 20px);
+    line-height:1.55;
+    max-width: 58ch;
+  }
 
-/* Testimonials */
-#cro-layer .t-stack{display:grid;gap:16px}
-#cro-layer .t-card{
-  background:#fff;border:1px solid var(--border);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow);
-  min-height:94px; display:flex; align-items:center;
-}
-#cro-layer .t-row{display:flex;gap:12px;align-items:center}
-#cro-layer .avatar-ring{
-  width:56px;height:56px;border-radius:50%;
-  background:conic-gradient(from 200deg, rgba(239,68,68,.55), rgba(239,68,68,.0) 65%);
-  display:grid;place-items:center; flex:0 0 56px;
-}
-#cro-layer .avatar{
-  width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #fff; box-shadow:0 0 0 1px #dbeafe;
-}
-#cro-layer .quote{margin:0 0 4px 0;font-size:18px;line-height:1.25;font-weight:800;letter-spacing:-.01em}
-#cro-layer .name{margin:0;color:#64748b;font-size:14px}
+  .cta-row{
+    display:flex; flex-wrap:wrap; gap:12px;
+    align-items:center;
+  }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:14px 20px; border-radius:14px;
+    font-weight:700; text-decoration:none; cursor:pointer;
+    transition: transform .06s ease, background .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{
+    background:var(--accent); color:#fff; box-shadow:var(--shadow);
+  }
+  .btn-primary:hover{ background:var(--accent-hover); transform:translateY(-1px); }
+  .btn-secondary{
+    border:1px solid var(--border); color:var(--ink); background:#fff;
+  }
+  .btn-secondary:hover{ background:#f8fafc; transform:translateY(-1px); }
+
+  .proof{
+    margin-top:10px; color:var(--muted); font-size:14px;
+  }
+
+  .benefits{
+    margin-top:20px;
+    display:grid; gap:16px;
+  }
+  .benefit{
+    display:grid; grid-template-columns:28px 1fr; gap:10px; align-items:flex-start;
+    font-size:16px; line-height:1.45;
+  }
+  .benefit svg{
+    width:28px; height:28px; margin-top:1px;
+    flex:0 0 28px;
+  }
+
+  .right{
+    position:relative;
+    min-height:220px;
+    border-radius:16px;
+    border:1px solid var(--border);
+    background:
+      radial-gradient(700px 220px at 120% -10%, #fde68a 0%, transparent 60%),
+      radial-gradient(700px 220px at -10% 120%, #93c5fd 0%, transparent 55%),
+      linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow:var(--shadow);
+    padding:18px;
+    margin-top:72px;
+  }
+  .stack{
+    display:flex; flex-direction:column; gap:14px; height:100%;
+  }
+  .tcard{
+    display:flex; align-items:center; gap:14px;
+    border:1px solid var(--border); border-radius:14px; background:#fff;
+    padding:12px 14px; box-shadow:var(--shadow);
+  }
+  .tcard img{
+    width:64px; height:64px; border-radius:50%;
+    object-fit:cover; flex:0 0 64px;
+  }
+  .tcontent h4{
+    margin:0; font-size:15px; font-weight:700; line-height:1.3;
+  }
+  .tcontent p{
+    margin:4px 0 0 0; color:var(--muted); font-size:14px; line-height:1.45;
+    max-width: 48ch;
+  }
+
+  @media (min-width: 960px){
+    .section{ padding:64px 24px 86px; }
+    .container{
+      grid-template-columns:1.08fr .92fr;
+      gap:40px; align-items:center;
+    }
+    .right{ min-height:460px; padding:22px; }
+    .tcard{ padding:16px 16px; }
+    .tcontent h4{ font-size:16px; }
+    .tcontent p{ font-size:15px; }
+  }
 </style>
 </head>
 <body>
-<div id="cro-layer">
-  <div class="wrap">
-    <section class="grid">
-      <!-- LEFT -->
-      <div>
+  <section class="section" aria-label="Hero">
+    <div class="container">
+      <div class="left">
         <h1>Keep More of Your Money with a Proper S-Corp Setup</h1>
-        <p class="sub">We help solopreneurs, creatives, and small business owners save thousands in taxes — fast, compliant, and stress-free.</p>
+        <p class="subhead">We help solopreneurs, creatives, and small business owners save thousands in taxes — fast, compliant, and stress-free.</p>
+
         <div class="cta-row">
-          <a class="btn primary" href="https://calendly.com/s-works/tax-savings-call" data-cl-cta="book-call">Book Your Free Tax-Savings Call</a>
-          <a class="btn secondary" href="https://www.s-works.io/pricing" data-cl-cta="learn-pricing">Learn pricing</a>
+          <a href="https://calendly.com/s-works/tax-savings-call" class="btn btn-primary">Book Your Free Tax-Savings Call</a>
+          <a href="https://www.s-works.io/pricing" class="btn btn-secondary">Learn pricing</a>
         </div>
         <div class="proof">Trusted by 500+ business owners nationwide</div>
-        <div class="divider"></div>
+
         <div class="benefits" role="list" aria-label="Key benefits">
-          <div class="benefit" role="listitem"><span class="tick" aria-hidden="true"></span><span class="btxt">Save up to $10k+ annually in taxes</span></div>
-          <div class="benefit" role="listitem"><span class="tick" aria-hidden="true"></span><span class="btxt">Done-for-you filing &amp; compliance</span></div>
-          <div class="benefit" role="listitem"><span class="tick" aria-hidden="true"></span><span class="btxt">Stress-free setup in as little as 5 days</span></div>
+          <div class="benefit" role="listitem">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="11" fill="rgba(34,197,94,.10)" stroke="rgba(34,197,94,.25)"/>
+              <path d="M7 12.5l3 3 7-7" stroke="#22c55e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Save up to $10k+ annually in taxes</span>
+          </div>
+          <div class="benefit" role="listitem">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="11" fill="rgba(34,197,94,.10)" stroke="rgba(34,197,94,.25)"/>
+              <path d="M7 12.5l3 3 7-7" stroke="#22c55e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Done-for-you filing &amp; compliance</span>
+          </div>
+          <div class="benefit" role="listitem">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="11" fill="rgba(34,197,94,.10)" stroke="rgba(34,197,94,.25)"/>
+              <path d="M7 12.5l3 3 7-7" stroke="#22c55e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Stress-free setup in as little as 5 days</span>
+          </div>
         </div>
       </div>
 
-      <!-- RIGHT -->
-      <aside class="right-wrap">
-        <div class="t-stack">
-          <article class="t-card">
-            <div class="t-row">
-              <span class="avatar-ring"><img class="avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jennifer R." /></span>
-              <div>
-                <p class="quote">“Incredible service and expertise.”</p>
-                <p class="name">Jennifer R.</p>
-              </div>
+      <div class="right" aria-label="Testimonials">
+        <div class="stack">
+          <div class="tcard">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Headshot of Jennifer R." />
+            <div class="tcontent">
+              <h4>Jennifer R.</h4>
+              <p>“Incredible service and expertise. They made my S-Corp setup painless and fast.”</p>
             </div>
-          </article>
-          <article class="t-card">
-            <div class="t-row">
-              <span class="avatar-ring"><img class="avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mike T." /></span>
-              <div>
-                <p class="quote">“A seamless process from start to finish.”</p>
-                <p class="name">Mike T.</p>
-              </div>
+          </div>
+          <div class="tcard">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Headshot of Mike T." />
+            <div class="tcontent">
+              <h4>Mike T.</h4>
+              <p>“A seamless process from start to finish — I’m saving thousands already.”</p>
             </div>
-          </article>
-          <article class="t-card">
-            <div class="t-row">
-              <span class="avatar-ring"><img class="avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah M." /></span>
-              <div>
-                <p class="quote">“I highly recommend S-Works.”</p>
-                <p class="name">Sarah M.</p>
-              </div>
+          </div>
+          <div class="tcard">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Headshot of Sarah M." />
+            <div class="tcontent">
+              <h4>Sarah M.</h4>
+              <p>“Clear steps, zero stress, and compliant. I highly recommend S-Works.”</p>
             </div>
-          </article>
+          </div>
         </div>
-      </aside>
-    </section>
-  </div>
-</div>
+      </div>
 
-<script>
-addEventListener('click',(e)=>{const a=e.target.closest('#cro-layer a[data-cl-cta]'); if(a) console.log('[CRO Layer] CTA:', a.getAttribute('data-cl-cta'), a.href);});
-</script>
+    </div>
+  </section>
 </body>
 </html>
