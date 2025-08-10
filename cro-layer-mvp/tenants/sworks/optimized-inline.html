@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S-Works — Keep More of Your Money with a Proper S-Corp Setup</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;           /* slate-900 */
+      --muted:#475569;          /* slate-600 */
+      --accent:#ef4444;         /* coral/red CTA */
+      --accent-hover:#dc2626;
+      --border:#e5e7eb;
+      --check:#111827;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    .wrap{max-width:1120px;margin:0 auto;padding:32px 20px}
+    .hero{padding:48px 0 24px}
+    .eyebrow{font-weight:600;letter-spacing:.02em;color:var(--muted);margin:0 0 10px}
+    h1{font-size:clamp(32px,4.5vw,56px);line-height:1.1;margin:0 0 12px;font-weight:800}
+    .sub{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:52ch;margin:0 0 22px}
+    .cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin: 8px 0 10px}
+    .btn{display:inline-block;padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:700}
+    .btn.primary{background:var(--accent);color:#fff}
+    .btn.primary:hover{background:var(--accent-hover)}
+    .btn.secondary{border:1px solid var(--border);color:var(--text);background:#fff}
+    .trust{font-size:14px;color:var(--muted);margin-top:10px}
+    .divider{height:1px;background:var(--border);margin:28px 0}
+    .benefits{display:grid;grid-template-columns: 1fr; gap:18px; margin:24px 0 8px}
+    @media(min-width:880px){ .benefits{grid-template-columns:1fr 1fr; gap:24px}}
+    .benefit{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+    .check{width:22px;height:22px;flex:0 0 22px;border-radius:50%;border:2px solid var(--check);display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1}
+    .b-title{font-weight:700;margin:0 0 4px}
+    .b-copy{margin:0;color:var(--muted)}
+    footer{color:var(--muted);font-size:14px;padding:24px 0 8px}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">S-Works</p>
+      <h1>Keep More of Your Money with a Proper S-Corp Setup</h1>
+      <p class="sub">We help solopreneurs, creatives, and small business owners save thousands in taxes — fast, compliant, and stress-free.</p>
+
+      <div class="cta-row">
+        <!-- PRIMARY: adjust this to the real booking link when ready -->
+        <a class="btn primary" href="https://calendly.com/your-booking-link" data-cl-cta="book-call">
+          Book Your Free Tax-Savings Call
+        </a>
+        <!-- SECONDARY: keep their current flow alive -->
+        <a class="btn secondary" href="https://www.s-works.io/pricing" data-cl-cta="learn-pricing">
+          Learn about pricing
+        </a>
+      </div>
+
+      <div class="trust">Trusted by 500+ business owners nationwide</div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="benefits">
+      <article class="benefit">
+        <span class="check">✓</span>
+        <div><p class="b-title">Save up to $10k+ annually in taxes</p>
+        <p class="b-copy">We structure your compensation to minimize self-employment taxes without compromising compliance.</p></div>
+      </article>
+
+      <article class="benefit">
+        <span class="check">✓</span>
+        <div><p class="b-title">Done-for-you filing & compliance</p>
+        <p class="b-copy">We handle the paperwork and deadlines so you can focus on your business.</p></div>
+      </article>
+
+      <article class="benefit">
+        <span class="check">✓</span>
+        <div><p class="b-title">Stress-free setup in as little as 5 days</p>
+        <p class="b-copy">Clear steps, proactive communication, and a fast path to savings.</p></div>
+      </article>
+    </section>
+
+    <footer>© S-Works</footer>
+  </main>
+
+  <script>
+    // Simple click log you can replace with Mixpanel/PostHog later
+    document.addEventListener('click', function(e){
+      var a = e.target.closest('a[data-cl-cta]');
+      if(a) console.log('[CRO Layer] CTA:', a.getAttribute('data-cl-cta'), a.href);
+    });
+  </script>
+</body>
+</html>
